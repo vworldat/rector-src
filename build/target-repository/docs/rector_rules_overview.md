@@ -1,4 +1,4 @@
-# 354 Rules Overview
+# 352 Rules Overview
 
 <br>
 
@@ -56,7 +56,7 @@
 
 - [Transform](#transform) (22)
 
-- [TypeDeclaration](#typedeclaration) (40)
+- [TypeDeclaration](#typedeclaration) (38)
 
 - [Visibility](#visibility) (3)
 
@@ -6238,7 +6238,7 @@ Add known return type to arrow function
 
 ### AddMethodCallBasedStrictParamTypeRector
 
-Change private method param type to strict type, based on passed strict types
+Change private classMethod param type to strict type, based on passed strict types
 
 - class: [`Rector\TypeDeclaration\Rector\ClassMethod\AddMethodCallBasedStrictParamTypeRector`](../rules/TypeDeclaration/Rector/ClassMethod/AddMethodCallBasedStrictParamTypeRector.php)
 
@@ -6949,44 +6949,6 @@ Add union return type
          }
 
          return new stdClass;
-     }
- }
-```
-
-<br>
-
-### StrictArrayParamDimFetchRector
-
-Add array type based on array dim fetch use
-
-- class: [`Rector\TypeDeclaration\Rector\ClassMethod\StrictArrayParamDimFetchRector`](../rules/TypeDeclaration/Rector/ClassMethod/StrictArrayParamDimFetchRector.php)
-
-```diff
- class SomeClass
- {
--    public function resolve($item)
-+    public function resolve(array $item)
-     {
-         return $item['name'];
-     }
- }
-```
-
-<br>
-
-### StrictStringParamConcatRector
-
-Add string type based on concat use
-
-- class: [`Rector\TypeDeclaration\Rector\ClassMethod\StrictStringParamConcatRector`](../rules/TypeDeclaration/Rector/ClassMethod/StrictStringParamConcatRector.php)
-
-```diff
- class SomeClass
- {
--    public function resolve($item)
-+    public function resolve(string $item)
-     {
-         return $item . ' world';
      }
  }
 ```
